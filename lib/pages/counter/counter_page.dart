@@ -30,7 +30,9 @@ class _CounterPageState extends State<CounterPage> {
                 )),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          _bloc.add(CounterEvents.increment);
+        },
       ),
     );
   }

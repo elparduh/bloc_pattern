@@ -15,13 +15,19 @@ class CounterBloc {
   void add(CounterEvents event) {
     switch (event) {
       case CounterEvents.decrement:
-        _counter--;
+        _emit(_counter - 1);
         break;
       case CounterEvents.increment:
-        _counter++;
+        _emit(_counter + 1);
         break;
     }
-    _controller.add(_counter);
+  }
+
+  void _emit(int newCounter) {
+    if (newCounter != _counter) {
+      _counter = newCounter;
+      _controller.add(_counter);
+    }
   }
 
   void dispose() {

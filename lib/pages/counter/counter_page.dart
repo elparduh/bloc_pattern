@@ -1,4 +1,4 @@
-import 'package:bloc_pattern/pages/counter/counter_bloc.dart';
+import 'package:bloc_pattern/state_management/counter_bloc.dart';
 import 'package:flutter/material.dart';
 
 class CounterPage extends StatefulWidget {
